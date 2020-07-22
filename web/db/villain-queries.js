@@ -1,5 +1,6 @@
 const db = require('./db');
 
+// using a callback
 const getAllVillains = (cb) => {
   db
     .query('SELECT * FROM movie_villains ORDER BY id;')
@@ -8,6 +9,7 @@ const getAllVillains = (cb) => {
     });
 };
 
+// using a promise
 const getVillainById = (id) => {
   return db
     .query('SELECT * FROM movie_villains WHERE id = $1;', [id])
